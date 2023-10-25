@@ -40,9 +40,12 @@ struct RegisterView: View {
                 Form {
                     TextField("Full name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .autocorrectionDisabled()
                         .padding(.top, 5)
                     TextField("Email Address", text: $email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .autocapitalization(.none)
+                        .autocorrectionDisabled()
                         .padding(.top, 5)
                     SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -59,10 +62,9 @@ struct RegisterView: View {
                                 .foregroundColor(.white)
                                 .bold()
                         }
+                        .padding()
                     }
                 }
-
-                Spacer()
             }
         }
     }

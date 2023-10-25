@@ -12,27 +12,27 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-                Color(UIColor(hex: "#BC6FF8")) // Set the custom background color
-                    .edgesIgnoringSafeArea(.all)
+            GeometryReader { geometry in // Add a GeometryReader
+                ZStack {
+                    Color(UIColor(hex: "#BC6FF8")) // Set the custom background color
+                        .edgesIgnoringSafeArea(.all)
 
-                VStack {
-                    
-                    Text("To Do")
-                        .font(.system(size: 60))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
-                    Image("pencil") // Replace "your_splash_image" with the actual image name
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150, height: 150) // Adjust the size as needed
+                    VStack {
+                        Text("To Do")
+                            .font(.system(size: 60))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
 
+                        Image("pencil") // Replace "your_splash_image" with the actual image name
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 150, height: 150) // Adjust the size as needed
 
-                    NavigationLink("", destination: LoginView(), isActive: $showLogin)
-                        .opacity(0) // Hidden navigation link to navigate to the LoginView
-
+                        NavigationLink("", destination: LoginView(), isActive: $showLogin)
+                            .opacity(0) // Hidden navigation link to navigate to the LoginView
+                    }
                 }
+                .frame(width: geometry.size.width, height: geometry.size.height) // Use the GeometryReader size
             }
             .onAppear {
                 // Simulate a delay or add your logic here to navigate to the LoginView
@@ -69,4 +69,3 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }
-
