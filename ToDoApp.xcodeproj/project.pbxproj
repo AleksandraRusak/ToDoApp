@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2B196AE2AE809EA00948A38 /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B196AD2AE809EA00948A38 /* ToDoAppApp.swift */; };
 		F2B196B22AE809EE00948A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B196B12AE809EE00948A38 /* Assets.xcassets */; };
 		F2B196B52AE809EE00948A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B196B42AE809EE00948A38 /* Preview Assets.xcassets */; };
 		F2B196BF2AE809EE00948A38 /* ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B196BE2AE809EE00948A38 /* ToDoAppTests.swift */; };
@@ -33,6 +32,7 @@
 		F2B196FF2AE8679A00948A38 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B196FE2AE8679A00948A38 /* LoginViewViewModel.swift */; };
 		F2B197012AE867A800948A38 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */; };
 		F2B197032AE867E600948A38 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B197022AE867E600948A38 /* ToDoListItemViewViewModel.swift */; };
+		F2B1973F2AE931D600948A38 /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		F2B196AA2AE809EA00948A38 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2B196AD2AE809EA00948A38 /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		F2B196B12AE809EE00948A38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2B196B42AE809EE00948A38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2B196BA2AE809EE00948A38 /* ToDoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +78,7 @@
 		F2B196FE2AE8679A00948A38 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		F2B197022AE867E600948A38 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
+		F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				F2B196B12AE809EE00948A38 /* Assets.xcassets */,
-				F2B196AD2AE809EA00948A38 /* ToDoAppApp.swift */,
 				F2B196DE2AE80E0000948A38 /* GoogleService-Info.plist */,
+				F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -357,6 +357,7 @@
 				F2B197012AE867A800948A38 /* RegisterViewViewModel.swift in Sources */,
 				F2B196E52AE864AF00948A38 /* ContentView.swift in Sources */,
 				F2B196E92AE8651A00948A38 /* ToDoListView.swift in Sources */,
+				F2B1973F2AE931D600948A38 /* ToDoAppApp.swift in Sources */,
 				F2B196EF2AE8657000948A38 /* RegisterView.swift in Sources */,
 				F2B196F92AE8674800948A38 /* ProfileViewViewModel.swift in Sources */,
 				F2B196E72AE864FD00948A38 /* ProfileView.swift in Sources */,
@@ -364,7 +365,6 @@
 				F2B196F12AE8662400948A38 /* ToDoListItemView.swift in Sources */,
 				F2B196FB2AE8676900948A38 /* ToDoListViewViewModel.swift in Sources */,
 				F2B196FF2AE8679A00948A38 /* LoginViewViewModel.swift in Sources */,
-				F2B196AE2AE809EA00948A38 /* ToDoAppApp.swift in Sources */,
 				F2B196F52AE866C000948A38 /* ToDoListItem.swift in Sources */,
 				F2B196EB2AE8655100948A38 /* NewItemView.swift in Sources */,
 				F2B196FD2AE8678700948A38 /* NewItemViewViewModel.swift in Sources */,
