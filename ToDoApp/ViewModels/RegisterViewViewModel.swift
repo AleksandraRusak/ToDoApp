@@ -13,6 +13,7 @@ class RegisterViewViewModel: ObservableObject {
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var errorMessage = ""
     
     init() {}
     
@@ -21,6 +22,7 @@ class RegisterViewViewModel: ObservableObject {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+           
             guard let userId = result?.user.uid else {
                 return
             }
@@ -40,6 +42,7 @@ class RegisterViewViewModel: ObservableObject {
     
     
     private func validate() -> Bool {
+        //errorMessage = ""
         guard !name.trimmingCharacters(in: .whitespaces).isEmpty,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
               !password.trimmingCharacters(in: .whitespaces).isEmpty else {

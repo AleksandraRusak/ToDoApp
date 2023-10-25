@@ -49,24 +49,17 @@ struct RegisterView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top, 5)
 
-                    Button(action: {
-                        // Create account
-                    }) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.purple)
-
-                            Text("Create account")
-                                .foregroundColor(.white)
-                                .bold()
-                        }
+                    ToDoButton(title: "Create account"){
+                        // Registration
+                        viewModel.register()
+                    }
                         .padding()
                     }
                 }
             }
         }
     }
-}
+
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {

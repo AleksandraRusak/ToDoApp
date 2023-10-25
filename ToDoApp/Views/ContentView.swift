@@ -16,12 +16,12 @@ struct ContentView: View {
         NavigationView {
             SplashView(showLogin: $showLogin)
             
-            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
-                // signed in
-                ToDoListView()
-            } else {
-                LoginView()
-            }
+//            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
+//                // signed in
+//                ToDoListView()
+//            } else {
+//                LoginView()
+//            }
         }
         
     }

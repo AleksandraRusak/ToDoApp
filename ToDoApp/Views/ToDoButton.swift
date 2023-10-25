@@ -10,11 +10,12 @@ import SwiftUI
 struct ToDoButton: View {
     
     let title: String
+    let action: () -> Void
     
     var body: some View {
         Button {
-            // Log in
-            
+            // Action
+            action()
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
@@ -31,7 +32,9 @@ struct ToDoButton: View {
 
     struct  ToDoButton_Previews: PreviewProvider {
                    static var previews: some View {
-                    ToDoButton(title: "Value")
+                       ToDoButton(title: "Value") {
+                           // Action
+                       }
                    }
                }
    
