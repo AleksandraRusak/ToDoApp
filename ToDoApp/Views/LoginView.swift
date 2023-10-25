@@ -12,7 +12,7 @@ struct LoginView: View {
     @State var password = ""
 
     var body: some View {
-        GeometryReader { geometry in // Add a GeometryReader
+        GeometryReader { geometry in
             VStack {
                 // Header
                 ZStack {
@@ -33,7 +33,7 @@ struct LoginView: View {
                     }
                     .padding(.top, -123)
                 }
-                .frame(width: geometry.size.width, height: 300) // Use geometry.size.width
+                .frame(width: geometry.size.width, height: 300)
 
                 // Form
                 Form {
