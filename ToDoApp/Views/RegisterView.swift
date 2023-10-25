@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var name = ""
-    @State var email = ""
-    @State var password = ""
-
+    @StateObject var viewModel = RegisterViewViewModel()
+    
     var body: some View {
         GeometryReader { geometry in // Add a GeometryReader
             VStack {
@@ -38,16 +36,16 @@ struct RegisterView: View {
 
                 // Form
                 Form {
-                    TextField("Full name", text: $name)
+                    TextField("Full name", text: $viewModel.name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocorrectionDisabled()
                         .padding(.top, 5)
-                    TextField("Email Address", text: $email)
+                    TextField("Email Address", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
                         .padding(.top, 5)
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top, 5)
 
