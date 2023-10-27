@@ -31,7 +31,7 @@ struct LoginView: View {
                                 .font(.system(size: 30))
                                 .foregroundColor(Color.white)
                         }
-                        .padding(.top, -123)
+                        .padding(.top, -133)
                     }
                     .frame(width: geometry.size.width, height: 300)
                     

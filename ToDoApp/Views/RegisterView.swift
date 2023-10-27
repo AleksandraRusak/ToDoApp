@@ -26,13 +26,13 @@ struct RegisterView: View {
                             .foregroundColor(Color.white)
                             .bold()
 
-                        Text("Begin planning")
+                        Text("Start planning")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                     }
-                    .padding(.top, -123)
+                    .padding(.top, -140)
                 }
-                .frame(width: geometry.size.width, height: 300) // Use geometry.size.width
+                .frame(width: geometry.size.width, height: geometry.size.height / 2.8) // Use geometry.size.width
 
                 // Form
                 Form {

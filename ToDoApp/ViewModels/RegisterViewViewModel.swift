@@ -26,12 +26,12 @@ class RegisterViewViewModel: ObservableObject {
             guard let userId = result?.user.uid else {
                 return
             }
-            self?.inserUserRecord(id: userId)
+            self?.insertUserRecord(id: userId)
         }
     }
     
     
-    private func inserUserRecord(id: String) {
+    private func insertUserRecord(id: String) {
         let newUser = User(id: id, name: name, email: email, joined: Date().timeIntervalSince1970)
         
         let db = Firestore.firestore()
@@ -51,7 +51,7 @@ class RegisterViewViewModel: ObservableObject {
         }
          //email @ and .com/.se
         guard email.contains("@") && email.contains(".") else {
-            //errorMessage = "Please fill in all fields"
+            errorMessage = "Please fill in email with @ and ."
             return false
         }
         
