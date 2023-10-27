@@ -10,19 +10,22 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = ContentViewViewModel()
 
-
     var body: some View {
-        
-            SplashView()
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
             
-//            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
-//                // signed in
-//                ToDoListView()
-//            } else {
-//                LoginView()
-//            }
-        
-        
+        TabView {
+            ToDoListView(userId: viewModel.currentUserId)
+                .tabItem{
+                    Label("Home", systemImage: "house")
+                }
+            ProfileView()
+                .tabItem{
+                    Label("Profile", systemImage: "person.circle")
+                }
+            }
+            } else {
+                LoginView()
+            }
     }
 }
 

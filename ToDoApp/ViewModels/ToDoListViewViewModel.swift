@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+// list of all todos
+class ToDoListViewViewModel: ObservableObject {
+    init() {}
+}

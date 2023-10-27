@@ -9,7 +9,9 @@ import Foundation
 import FirebaseAuth
 
 class ContentViewViewModel: ObservableObject {
+    
     @Published var currentUserId: String = ""
+    
     private var handler: AuthStateDidChangeListenerHandle?
     
     init() {

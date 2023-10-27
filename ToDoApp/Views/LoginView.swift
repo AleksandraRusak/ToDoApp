@@ -54,7 +54,6 @@ struct LoginView: View {
                             .padding(.top, 5)
                         
                         ToListButton(title: "Log in"){
-                            // Log in
                             viewModel.login()
                         }
                         .padding()
