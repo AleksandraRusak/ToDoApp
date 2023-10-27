@@ -9,5 +9,8 @@ import Foundation
 
 // list of all todos
 class ToDoListViewViewModel: ObservableObject {
+    
+    @Published var showingNewItemView = false
+    
     init() {}
 }
