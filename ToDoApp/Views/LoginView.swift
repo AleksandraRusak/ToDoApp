@@ -10,9 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel = LoginViewViewModel()
     
-    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             GeometryReader { geometry in
                 VStack {
                     // Header
@@ -54,7 +53,7 @@ struct LoginView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.top, 5)
                         
-                        ToDoButton(title: "Log in"){
+                        ToListButton(title: "Log in"){
                             // Log in
                             viewModel.login()
                         }

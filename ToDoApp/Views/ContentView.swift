@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = ContentViewViewModel()
-    @State private var showLogin = false
+
 
     var body: some View {
         
-        NavigationView {
-            SplashView(showLogin: $showLogin)
+            SplashView()
             
 //            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
 //                // signed in
@@ -22,7 +21,7 @@ struct ContentView: View {
 //            } else {
 //                LoginView()
 //            }
-        }
+        
         
     }
 }

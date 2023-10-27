@@ -26,7 +26,7 @@ struct RegisterView: View {
                             .foregroundColor(Color.white)
                             .bold()
 
-                        Text("Begin life planning")
+                        Text("Begin planning")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                     }
@@ -54,7 +54,7 @@ struct RegisterView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top, 5)
 
-                    ToDoButton(title: "Create account"){
+                    ToListButton(title: "Create account"){
                         // Registration
                         viewModel.register()
                     }

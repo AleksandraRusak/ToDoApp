@@ -8,45 +8,50 @@
 import SwiftUI
 
 struct SplashView: View {
-    @Binding var showLogin: Bool
 
+    @State var isActive: Bool = false
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color(UIColor(hex: "#BC6FF8"))
-                    .edgesIgnoringSafeArea(.all)
-
-                VStack {
-                    Text("To Do")
-                        .font(.system(size: 60))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-
-                    Image("pencil")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150, height: 150)
-
-                    NavigationLink("", destination: LoginView(), isActive: $showLogin)
-                        .opacity(0)
+                
+                if self.isActive {
+                    LoginView()
+                } else {
+                    Color(UIColor(hex: "#BC6FF8"))
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        Text("To Do")
+                            .font(.system(size: 60))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        
+                        Image("pencil")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 150, height: 150)
+                        
+                    }
+                    
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    showLogin = true
-                }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation {
+                            self.isActive = true
+                        }
+                    }
             }
-        }
     }
 }
 
 struct Splash_Previews: PreviewProvider {
     @State static var showLogin = false
     static var previews: some View {
-        SplashView(showLogin: $showLogin)
+        SplashView()
     }
 }
 

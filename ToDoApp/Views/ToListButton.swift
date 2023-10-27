@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct ToDoButton: View {
+struct ToListButton: View {
     
     let title: String
     let action: () -> Void
     
     var body: some View {
         Button {
-            // Action
             action()
         } label: {
             ZStack {
@@ -30,9 +29,9 @@ struct ToDoButton: View {
 }
             
 
-    struct  ToDoButton_Previews: PreviewProvider {
+    struct  ToListButton_Previews: PreviewProvider {
                    static var previews: some View {
-                       ToDoButton(title: "Value") {
+                       ToListButton(title: "Value") {
                            // Action
                        }
                    }
