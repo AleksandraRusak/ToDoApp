@@ -45,7 +45,7 @@ struct RegisterView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocorrectionDisabled()
                         .padding(.top, 5)
-                    TextField("Email Address", text: $viewModel.email)
+                    TextField("Email address", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocapitalization(.none)
                         .autocorrectionDisabled()

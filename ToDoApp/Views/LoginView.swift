@@ -44,7 +44,7 @@ struct LoginView: View {
                                 .foregroundColor(.red)
                         }
                         
-                        TextField("Email Address", text: $viewModel.email)
+                        TextField("Email address", text: $viewModel.email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocapitalization(.none)
                             .autocorrectionDisabled()
@@ -63,7 +63,7 @@ struct LoginView: View {
                     // Create Account
                     VStack {
                         Text("New around here?")
-                        NavigationLink("Create An Account", destination: RegisterView())
+                        NavigationLink("Create an account", destination: RegisterView())
                     }
                     .padding(.bottom, 30)
                     
