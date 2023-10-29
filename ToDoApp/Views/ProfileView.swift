@@ -48,7 +48,8 @@ struct ProfileView: View {
                         viewModel.logOut()
                     }
                     .tint(.red)
-                    .padding()
+                    .padding(.top, 80)
+                    
                     Spacer()
                 } else {
                     Text("Loading Profile...")
