@@ -19,32 +19,35 @@ struct ToDoListView: View {
     }
     
     var body: some View {
-        
-        NavigationStack {
-            VStack {
-                List(items) { item in
-                    ToDoListItemView(item: item)
-                        .swipeActions {
-                            Button("Delete") {
-                                viewModel.delete(id: item.id)
+        GeometryReader { geometry in
+            NavigationStack {
+                VStack {
+                    List(items) { item in
+                        ToDoListItemView(item: item)
+                            .swipeActions {
+                                Button("Delete") {
+                                    viewModel.delete(id: item.id)
+                                }
+                                .tint(.red)
                             }
-                            .tint(.red)
-                        }
+                    }
+                    .listStyle(PlainListStyle())
                 }
-                .listStyle(PlainListStyle())
-            }
-            .navigationTitle("To Do List")
-            .toolbar {
-                Button {
-                    // Action
-                    viewModel.showingNewItemView = true
-                } label: {
-                    Image(systemName: "plus")
+                .navigationTitle("To Do List")
+                .toolbar {
+                    Button {
+                        // Action
+                        viewModel.showingNewItemView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
+                .sheet(isPresented: $viewModel.showingNewItemView, content: {
+                    NewItemView(newItemPresented: $viewModel.showingNewItemView)
+                })
+                
             }
-            .sheet(isPresented: $viewModel.showingNewItemView, content: {
-                NewItemView(newItemPresented: $viewModel.showingNewItemView)
-            })
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

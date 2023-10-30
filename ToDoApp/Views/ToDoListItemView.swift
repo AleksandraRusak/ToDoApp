@@ -13,22 +13,25 @@ struct ToDoListItemView: View {
     let item: ToDoListItem
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(item.title)
-                    .font(.body)
-                Text("\(Date(timeIntervalSince1970: item.dueDate).formatted(date: .abbreviated, time: .shortened))")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+        GeometryReader { geometry in
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.title)
+                        .font(.body)
+                    Text("\(Date(timeIntervalSince1970: item.dueDate).formatted(date: .abbreviated, time: .shortened))")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                
+                Button {
+                    viewModel.toggleIsDone(item: item)
+                } label: {
+                    Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                        .foregroundColor(.blue)
+                }
             }
-            Spacer()
-            
-            Button {
-                viewModel.toggleIsDone(item: item)
-            } label: {
-                Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(.blue)
-            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

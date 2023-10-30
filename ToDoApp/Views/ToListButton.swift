@@ -13,17 +13,20 @@ struct ToListButton: View {
     let action: () -> Void
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.purple)
-                
-                Text(title)
-                    .foregroundColor(.white)
-                    .bold()
+        GeometryReader { geometry in
+            Button {
+                action()
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.purple)
+                    
+                    Text(title)
+                        .foregroundColor(.white)
+                        .bold()
+                }
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

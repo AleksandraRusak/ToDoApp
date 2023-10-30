@@ -32,8 +32,8 @@ struct RegisterView: View {
                     }
                     .padding(.top, -140)
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height / 2.8) // Use geometry.size.width
-
+                .frame(width: geometry.size.width, height: geometry.size.height / 2.8)
+                
                 // Form
                 Form {
                     if !viewModel.errorMessage.isEmpty {
@@ -61,6 +61,7 @@ struct RegisterView: View {
                         .padding()
                     }
                 }
+            .frame(width: geometry.size.width, height: geometry.size.height)
             }
         }
     }

@@ -11,8 +11,8 @@ struct LoginView: View {
     @StateObject var viewModel = LoginViewViewModel()
     
     var body: some View {
+        GeometryReader { geometry in
         NavigationStack{
-            GeometryReader { geometry in
                 VStack {
                     // Header
                     ZStack {
@@ -70,6 +70,7 @@ struct LoginView: View {
                     Spacer()
                 }
             }
+        .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

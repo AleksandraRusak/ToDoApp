@@ -13,12 +13,12 @@ struct NewItemView: View {
     @Binding var newItemPresented : Bool
     
     var body: some View {
-    
+        GeometryReader { geometry in
             VStack {
                 Text("New Task")
                     .font(.system(size: 32))
                     .bold()
-                    .padding(.top, 50)
+                    .padding(.top, 30)
                 
                 Form {
                     TextField("Title", text: $viewModel.title)
@@ -41,6 +41,8 @@ struct NewItemView: View {
                     Alert(title: Text("Error"), message: Text("Please fill in a title and select due date and time."))
                 })
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
     }
     
 }

@@ -11,21 +11,24 @@ struct ContentView: View {
     @StateObject var viewModel = ContentViewViewModel()
 
     var body: some View {
-        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
-            
-        TabView {
-            ToDoListView(userId: viewModel.currentUserId)
-                .tabItem{
-                    Label("Home", systemImage: "house")
+        GeometryReader { geometry in
+            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
+                
+                TabView {
+                    ToDoListView(userId: viewModel.currentUserId)
+                        .tabItem{
+                            Label("Home", systemImage: "house")
+                        }
+                    ProfileView()
+                        .tabItem{
+                            Label("Profile", systemImage: "person.circle")
+                        }
                 }
-            ProfileView()
-                .tabItem{
-                    Label("Profile", systemImage: "person.circle")
-                }
-            }
+                .frame(width: geometry.size.width, height: geometry.size.height)
             } else {
                 LoginView()
             }
+        }
     }
 }
 
