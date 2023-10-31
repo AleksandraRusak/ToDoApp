@@ -176,11 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				F2B196E42AE864AF00948A38 /* ContentView.swift */,
+				F2B196EC2AE8656400948A38 /* LoginView.swift */,
+				F2B196EE2AE8657000948A38 /* RegisterView.swift */,
 				F2B196E62AE864FD00948A38 /* ProfileView.swift */,
 				F2B196E82AE8651A00948A38 /* ToDoListView.swift */,
 				F2B196EA2AE8655100948A38 /* NewItemView.swift */,
-				F2B196EC2AE8656400948A38 /* LoginView.swift */,
-				F2B196EE2AE8657000948A38 /* RegisterView.swift */,
 				F2B196F02AE8662400948A38 /* ToDoListItemView.swift */,
 				F2A235032AE9B31F000D60F1 /* ToListButton.swift */,
 			);
@@ -191,11 +191,11 @@
 			isa = PBXGroup;
 			children = (
 				F2B196F62AE8673200948A38 /* ContentViewViewModel.swift */,
+				F2B196FE2AE8679A00948A38 /* LoginViewViewModel.swift */,
+				F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */,
 				F2B196F82AE8674800948A38 /* ProfileViewViewModel.swift */,
 				F2B196FA2AE8676900948A38 /* ToDoListViewViewModel.swift */,
 				F2B196FC2AE8678700948A38 /* NewItemViewViewModel.swift */,
-				F2B196FE2AE8679A00948A38 /* LoginViewViewModel.swift */,
-				F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */,
 				F2B197022AE867E600948A38 /* ToDoListItemViewViewModel.swift */,
 			);
 			path = ViewModels;
@@ -544,6 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = QKRZ254RQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -551,6 +552,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,6 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = QKRZ254RQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -579,6 +582,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

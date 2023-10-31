@@ -55,7 +55,6 @@ struct RegisterView: View {
                         .padding(.top, 5)
 
                     ToListButton(title: "Create account"){
-                        // Registration
                         viewModel.register()
                     }
                         .padding()

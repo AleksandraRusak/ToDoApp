@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-// list of all todos
+// ViewModel for list of all todos
 class ToDoListViewViewModel: ObservableObject {
     
     @Published var showingNewItemView = false
@@ -19,6 +19,7 @@ class ToDoListViewViewModel: ObservableObject {
         self.userId = userId
     }
     
+    // Delete to do list item
     func delete(id: String) {
         let db = Firestore.firestore()
         
