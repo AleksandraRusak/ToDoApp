@@ -35,7 +35,6 @@
 		F2B197012AE867A800948A38 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */; };
 		F2B197032AE867E600948A38 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B197022AE867E600948A38 /* ToDoListItemViewViewModel.swift */; };
 		F2B1973F2AE931D600948A38 /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */; };
-		F2C48D512AEF133B009E9B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C48D502AEF133B009E9B52 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2A011D82AF59CF700BCC7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2A234FF2AE9A70C000D60F1 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		F2A235032AE9B31F000D60F1 /* ToListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToListButton.swift; sourceTree = "<group>"; };
 		F2B196AA2AE809EA00948A38 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +84,6 @@
 		F2B197002AE867A800948A38 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		F2B197022AE867E600948A38 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
 		F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
-		F2C48D502AEF133B009E9B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +137,7 @@
 		F2B196AC2AE809EA00948A38 /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				F2A011D82AF59CF700BCC7D9 /* Info.plist */,
 				F2B196E32AE863CA00948A38 /* Other */,
 				F2B196E22AE8629200948A38 /* Models */,
 				F2B196E12AE8628400948A38 /* ViewModels */,
@@ -217,7 +217,6 @@
 				F2B196DE2AE80E0000948A38 /* GoogleService-Info.plist */,
 				F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */,
 				F2A234FF2AE9A70C000D60F1 /* Extentions.swift */,
-				F2C48D502AEF133B009E9B52 /* Launch Screen.storyboard */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -336,7 +335,6 @@
 			files = (
 				F2B196B52AE809EE00948A38 /* Preview Assets.xcassets in Resources */,
 				F2B196B22AE809EE00948A38 /* Assets.xcassets in Resources */,
-				F2C48D512AEF133B009E9B52 /* Launch Screen.storyboard in Resources */,
 				F2B196DF2AE80E0000948A38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +545,8 @@
 				DEVELOPMENT_TEAM = QKRZ254RQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Would like to use the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -577,6 +577,8 @@
 				DEVELOPMENT_TEAM = QKRZ254RQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Would like to use the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
