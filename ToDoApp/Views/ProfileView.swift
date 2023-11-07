@@ -19,12 +19,28 @@ struct ProfileView: View {
         GeometryReader { geometry in
             NavigationStack {
                 VStack {
-                    
                     if let user = viewModel.user {
                         Group {
-                                if let uiImage = viewModel.image {
-                                   Image(uiImage: uiImage)
-                                    .resizable()
+                                if let imageURL = viewModel.imageURL {
+                                    AsyncImage(url: imageURL) { phase in
+                                        switch phase {
+                                        case .success(let image):
+                                            image.resizable()
+                                                 .aspectRatio(contentMode: .fill)
+                                                 .frame(width: 180, height: 180)
+                                                 .clipShape(Circle())
+                                        case .failure(_):
+                                            Image(systemName: "person.circle.fill") // Fallback image
+                                                 .resizable()
+                                                 .aspectRatio(contentMode: .fill)
+                                                 .frame(width: 180, height: 180)
+                                                 .clipShape(Circle())
+                                        case .empty:
+                                            ProgressView()
+                                        @unknown default:
+                                            EmptyView()
+                                        }
+                                    }
                                 } else {
                                    Image(systemName: "person.circle")
                                     .resizable()
@@ -41,7 +57,7 @@ struct ProfileView: View {
                                 .sheet(isPresented: $presentImagePicker) {
                                     
                                     
-                                    ImagePickerView(sourceType: presentCamera ? .camera : .photoLibrary, image: self.$viewModel.image, isPresented: self.$presentImagePicker)
+                                    ImagePickerView(sourceType: presentCamera ? .camera : .photoLibrary, image: self.$viewModel.image, isPresented: self.$presentImagePicker, viewModel: viewModel)
                                     
                                     
                                 }.actionSheet(isPresented: $presentActionScheet) { () -> ActionSheet in
@@ -88,7 +104,6 @@ struct ProfileView: View {
                     }.navigationTitle("Profile")
                 
              }.onAppear {
-                 //viewModel.fetchImageWithCompletion()
                  viewModel.fetchUser()
              }.frame(width: geometry.size.width, height: geometry.size.height)
            }
@@ -100,7 +115,3 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
-
-
-
-//    @State var image: Image? = Image(systemName: "person.circle")

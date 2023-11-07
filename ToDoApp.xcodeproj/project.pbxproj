@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		F2A012102AF98CC500BCC7D9 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0120F2AF98CC500BCC7D9 /* ImagePickerView.swift */; };
 		F2A012482AFA433100BCC7D9 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A012472AFA433000BCC7D9 /* APIImage.swift */; };
-		F2A0124A2AFA436500BCC7D9 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A012492AFA436500BCC7D9 /* ImageViewModel.swift */; };
-		F2A0124C2AFA498000BCC7D9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0124B2AFA498000BCC7D9 /* Image.swift */; };
 		F2A0124E2AFA8FF300BCC7D9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2A0124D2AFA8FF300BCC7D9 /* FirebaseStorage */; };
 		F2A012502AFA8FF300BCC7D9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F2A0124F2AFA8FF300BCC7D9 /* FirebaseStorageCombine-Community */; };
 		F2A235002AE9A70C000D60F1 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A234FF2AE9A70C000D60F1 /* Extentions.swift */; };
@@ -64,8 +62,6 @@
 		F2A011D82AF59CF700BCC7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2A0120F2AF98CC500BCC7D9 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F2A012472AFA433000BCC7D9 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
-		F2A012492AFA436500BCC7D9 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
-		F2A0124B2AFA498000BCC7D9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F2A234FF2AE9A70C000D60F1 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		F2A235032AE9B31F000D60F1 /* ToListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToListButton.swift; sourceTree = "<group>"; };
 		F2B196AA2AE809EA00948A38 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +151,6 @@
 				F2B196E12AE8628400948A38 /* ViewModels */,
 				F2B196E02AE8627800948A38 /* Views */,
 				F2B196B32AE809EE00948A38 /* Preview Content */,
-				F2A012472AFA433000BCC7D9 /* APIImage.swift */,
-				F2A012492AFA436500BCC7D9 /* ImageViewModel.swift */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -221,7 +215,6 @@
 			children = (
 				F2B196F22AE8669E00948A38 /* User.swift */,
 				F2B196F42AE866C000948A38 /* ToDoListItem.swift */,
-				F2A0124B2AFA498000BCC7D9 /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +224,7 @@
 			children = (
 				F2B196B12AE809EE00948A38 /* Assets.xcassets */,
 				F2B196DE2AE80E0000948A38 /* GoogleService-Info.plist */,
+				F2A012472AFA433000BCC7D9 /* APIImage.swift */,
 				F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */,
 				F2A234FF2AE9A70C000D60F1 /* Extentions.swift */,
 			);
@@ -380,7 +374,6 @@
 			files = (
 				F2B196ED2AE8656400948A38 /* LoginView.swift in Sources */,
 				F2B196F72AE8673200948A38 /* ContentViewViewModel.swift in Sources */,
-				F2A0124C2AFA498000BCC7D9 /* Image.swift in Sources */,
 				F2B197012AE867A800948A38 /* RegisterViewViewModel.swift in Sources */,
 				F2B196E52AE864AF00948A38 /* ContentView.swift in Sources */,
 				F2A012102AF98CC500BCC7D9 /* ImagePickerView.swift in Sources */,
@@ -399,7 +392,6 @@
 				F2A235042AE9B31F000D60F1 /* ToListButton.swift in Sources */,
 				F2B196FD2AE8678700948A38 /* NewItemViewViewModel.swift in Sources */,
 				F2A012482AFA433100BCC7D9 /* APIImage.swift in Sources */,
-				F2A0124A2AFA436500BCC7D9 /* ImageViewModel.swift in Sources */,
 				F2B197032AE867E600948A38 /* ToDoListItemViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

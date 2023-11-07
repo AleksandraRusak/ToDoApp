@@ -14,8 +14,12 @@ import FirebaseStorage
 class ProfileViewViewModel: ObservableObject {
     
     @Published var user: User? = nil
-    
-    @Published var image: UIImage? = nil
+    @Published var imageURL: URL? = nil
+    @Published var image: UIImage? {
+        didSet {
+            saveImageToFirebaseStorage(image)
+        }
+    }
     
     var loader = APIImage()
     
@@ -34,6 +38,11 @@ class ProfileViewViewModel: ObservableObject {
                     email: data["email"] as? String ?? "",
                     joined: data["joined"] as? TimeInterval ?? 0
                 )
+                
+                if let profileImageUrlString = data["profileImageUrl"] as? String,
+                   let url = URL(string: profileImageUrlString) {
+                    self?.imageURL = url
+                }
             }
         }
     }
@@ -55,15 +64,39 @@ class ProfileViewViewModel: ObservableObject {
     }
     
     func saveImageToFirebaseStorage(_ image: UIImage?) {
-            guard let userId = Auth.auth().currentUser?.uid,
-                  let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
-            let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
-            storageRef.putData(imageData, metadata: nil) { metadata, error in
-                if let error = error {
-                    print("Error saving image to Firebase Storage: \(error)")
+        guard let userId = Auth.auth().currentUser?.uid,
+              let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
+        let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
+        
+        storageRef.putData(imageData, metadata: nil) { [weak self] metadata, error in
+            guard let self = self, error == nil else {
+                print("Error saving image to Firebase Storage: \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            storageRef.downloadURL { url, error in
+                guard let downloadURL = url else {
+                    print("Error getting download URL: \(error?.localizedDescription ?? "")")
                     return
                 }
-                print("Image successfully saved to Firebase Storage.")
+                
+                self.updateUserProfileImageURL(downloadURL, for: userId)
             }
         }
+    }
+    
+    func updateUserProfileImageURL(_ url: URL, for userId: String) {
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).updateData(["profileImageUrl": url.absoluteString]) { error in
+            if let error = error {
+                print("Error updating user profile image URL: \(error.localizedDescription)")
+                return
+            }
+            
+            // Update the imageURL property to reflect the new URL
+            DispatchQueue.main.async {
+                self.imageURL = url
+            }
+        }
+    }
 }
