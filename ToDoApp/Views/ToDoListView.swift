@@ -22,7 +22,7 @@ struct ToDoListView: View {
         GeometryReader { geometry in
             NavigationStack {
                 VStack {
-                    List(items) { item in
+                    List(items.sorted(by: { $0.dueDate > $1.dueDate })) { item in
                         ToDoListItemView(item: item)
                             .swipeActions {
                                 Button("Delete") {
