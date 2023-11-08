@@ -72,31 +72,21 @@ struct ProfileView: View {
                                     }),ActionSheet.Button.cancel()])
                                 }
                             // users info: name, email, member since
-                            VStack(alignment: .leading) {
-                                HStack{
-                                    Text("Name: ")
-                                        .bold()
-                                    Text(user.name)
-                                }.padding()
-                                HStack{
-                                    Text("Email: ")
-                                        .bold()
-                                    Text(user.email)
-                                }.padding()
-                                HStack{
-                                    Text("Member since: ")
-                                        .bold()
-                                    Text("\(Date(timeIntervalSince1970: user.joined).formatted(date: .abbreviated, time: .shortened))")
-                                }.padding()
+                        Form {
+                                Section(header: Text("Personal Information")) {
+                                                Text("Name: \(user.name)")
+                                                Text("Email: \(user.email)")
+                                                Text("Member since: \(Date(timeIntervalSince1970: user.joined).formatted(date: .abbreviated, time: .shortened))")
+                                                }
+
+                                Section {
+                                        Button("Log out", action: {
+                                        viewModel.logOut()
+                                    })
+                                    .tint(.red)
+                                    }
                             }
-                            // sign out
-                            Button("Log out") {
-                                viewModel.logOut()
-                            }
-                            .tint(.red)
-                            .padding(.top, 80)
-                            
-                            Spacer()
+                          
                         } else {
                             Text("Loading Profile...")
                         }
