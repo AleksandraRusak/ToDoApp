@@ -19,6 +19,7 @@ struct NewItemView: View {
                     .font(.system(size: 32))
                     .bold()
                     .padding(.top, 30)
+                    .foregroundColor(.purple)
                 
                 Form {
                     TextField("Title", text: $viewModel.title)

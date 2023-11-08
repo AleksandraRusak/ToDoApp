@@ -34,11 +34,13 @@ struct ToDoListView: View {
                     .listStyle(PlainListStyle())
                 }
                 .navigationTitle("To Do List")
+    
                 .toolbar {
                     Button {
                         viewModel.showingNewItemView = true
                     } label: {
                         Image(systemName: "plus")
+                            .foregroundColor(.purple)
                     }
                 }
                 .sheet(isPresented: $viewModel.showingNewItemView, content: {

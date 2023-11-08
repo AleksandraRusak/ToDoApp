@@ -30,7 +30,7 @@ struct ProfileView: View {
                                                  .frame(width: 180, height: 180)
                                                  .clipShape(Circle())
                                         case .failure(_):
-                                            Image(systemName: "person.circle.fill") // Fallback image
+                                            Image(systemName: "person.circle.fill")
                                                  .resizable()
                                                  .aspectRatio(contentMode: .fill)
                                                  .frame(width: 180, height: 180)
@@ -71,7 +71,7 @@ struct ProfileView: View {
                                         viewModel.fetchImageWithCompletion()
                                     }),ActionSheet.Button.cancel()])
                                 }
-                            // user info: name, email, member since
+                            // users info: name, email, member since
                             VStack(alignment: .leading) {
                                 HStack{
                                     Text("Name: ")
