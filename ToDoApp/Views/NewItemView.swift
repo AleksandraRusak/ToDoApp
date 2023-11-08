@@ -12,10 +12,12 @@ struct NewItemView: View {
     @StateObject var viewModel = NewItemViewViewModel()
     @Binding var newItemPresented : Bool
     
+    var itemToEdit: ToDoListItem? // Optional item for editing
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Text("New Task")
+                Text(itemToEdit == nil ? "New Task" : "Edit Task")
                     .font(.system(size: 32))
                     .bold()
                     .padding(.top, 30)
@@ -37,6 +39,18 @@ struct NewItemView: View {
                         }
                     }
                     .padding()
+                    
+                }
+                .onAppear {
+                    // Prepopulate form if editing
+                    if let item = itemToEdit {
+                        viewModel.id = item.id // Existing item ID
+                        viewModel.title = item.title
+                        viewModel.dueDate = Date(timeIntervalSince1970: item.dueDate)
+                    } else {
+                        // Reset for new item
+                        viewModel.reset()
+                    }
                 }
                 .alert(isPresented: $viewModel.showAlert, content: {
                     Alert(title: Text("Error"), message: Text("Please fill in a title and select due date and time."))
@@ -50,10 +64,6 @@ struct NewItemView: View {
 
 struct NewItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewItemView(newItemPresented: Binding(get: {
-            return true
-        }, set: { _ in
-            
-        }))
+        NewItemView(newItemPresented: .constant(true), itemToEdit: nil)
     }
 }

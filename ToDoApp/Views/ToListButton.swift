@@ -35,7 +35,6 @@ struct ToListButton: View {
     struct  ToListButton_Previews: PreviewProvider {
                    static var previews: some View {
                        ToListButton(title: "Value") {
-                           // Action
                        }
                    }
                }

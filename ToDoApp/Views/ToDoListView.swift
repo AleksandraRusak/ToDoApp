@@ -12,6 +12,9 @@ struct ToDoListView: View {
     @StateObject var viewModel: ToDoListViewViewModel
     @FirestoreQuery var items: [ToDoListItem]
     @State private var searchText = ""
+    
+    @State private var editingItem: ToDoListItem? // For editing existing items
+
 
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
@@ -22,11 +25,19 @@ struct ToDoListView: View {
         NavigationStack {
             List {
                 ForEach(filteredItems) { item in
-                    ToDoListItemView(item: item)
-                        .swipeActions {
-                            Button("Delete") {
-                                viewModel.delete(id: item.id)
-                            }
+                    ToDoListItemView(item: item, toggleIsDone: {
+                                           viewModel.toggleIsDone(item: item)
+                                       })
+                                       .swipeActions {
+                                           Button("Edit") {
+                                               editingItem = item
+                                               viewModel.showingNewItemView = true
+                                           }
+                                           .tint(.blue)
+                                           
+                                           Button("Delete") {
+                                               viewModel.delete(id: item.id)
+                                           }
                             .tint(.red)
                         }
                 }
@@ -36,6 +47,7 @@ struct ToDoListView: View {
             .searchable(text: $searchText) // Using the searchable modifier
             .toolbar {
                 Button {
+                    editingItem = nil // Reset for adding new item
                     viewModel.showingNewItemView = true
                 } label: {
                     Image(systemName: "plus")
@@ -43,7 +55,7 @@ struct ToDoListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showingNewItemView, content: {
-                NewItemView(newItemPresented: $viewModel.showingNewItemView)
+                NewItemView(newItemPresented: $viewModel.showingNewItemView, itemToEdit: editingItem)
             })
         }
     }

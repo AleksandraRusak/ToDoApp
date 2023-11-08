@@ -12,6 +12,7 @@ struct ToDoListItemView: View {
     @StateObject var viewModel = ToDoListItemViewViewModel()
     
     let item: ToDoListItem
+    var toggleIsDone: () -> Void
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,7 +27,7 @@ struct ToDoListItemView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.toggleIsDone(item: item)
+                    toggleIsDone()
                 } label: {
                     Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
                         .foregroundColor(.purple)
@@ -55,6 +56,8 @@ struct ToDoListItemView_Previews: PreviewProvider {
             title: "Read book",
             dueDate: Date().timeIntervalSince1970,
             createdDate: Date().timeIntervalSince1970,
-            isDone: false))
+            isDone: false),
+            toggleIsDone: { }
+        )
     }
 }

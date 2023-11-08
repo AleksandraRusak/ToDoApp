@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 // ViewModel for list of all todos
 class ToDoListViewViewModel: ObservableObject {
@@ -29,4 +30,20 @@ class ToDoListViewViewModel: ObservableObject {
             .document(id)
             .delete()
     }
+    
+    func toggleIsDone(item: ToDoListItem) {
+            var itemCopy = item
+            itemCopy.isDone.toggle()
+            
+            let db = Firestore.firestore()
+            guard let uid = Auth.auth().currentUser?.uid else {
+                return
+            }
+            
+            db.collection("users")
+                .document(uid)
+                .collection("todos")
+                .document(itemCopy.id)
+                .setData(itemCopy.asDictionary())
+        }
 }

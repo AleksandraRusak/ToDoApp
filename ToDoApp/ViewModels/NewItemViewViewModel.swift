@@ -14,6 +14,8 @@ class NewItemViewViewModel: ObservableObject {
     @Published var dueDate = Date()
     @Published var showAlert = false
     
+    var id: String? // Identifier for existing items
+    
     init() {}
     
     func save() {
@@ -27,7 +29,7 @@ class NewItemViewViewModel: ObservableObject {
         }
         
         // create model
-        let newId = UUID().uuidString
+        let newId = id ?? UUID().uuidString
         let newTask = ToDoListItem(
             id: newId,
             title: title,
@@ -36,7 +38,7 @@ class NewItemViewViewModel: ObservableObject {
             isDone: false)
         
         
-        // save model
+        // save to Firebase
         let db = Firestore.firestore()
         db.collection("users")
             .document(uId)
@@ -55,4 +57,10 @@ class NewItemViewViewModel: ObservableObject {
         }
         return true
     }
+    
+    func reset() {
+            id = nil
+            title = ""
+            dueDate = Date()
+        }
 }
