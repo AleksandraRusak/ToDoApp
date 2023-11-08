@@ -9,46 +9,51 @@ import SwiftUI
 import FirebaseFirestoreSwift
 
 struct ToDoListView: View {
-    
     @StateObject var viewModel: ToDoListViewViewModel
     @FirestoreQuery var items: [ToDoListItem]
-    
+    @State private var searchText = ""
+
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
         self._viewModel = StateObject(wrappedValue: ToDoListViewViewModel(userId: userId))
     }
-    
+
     var body: some View {
-        GeometryReader { geometry in
-            NavigationStack {
-                VStack {
-                    List(items.sorted(by: { $0.dueDate > $1.dueDate })) { item in
-                        ToDoListItemView(item: item)
-                            .swipeActions {
-                                Button("Delete") {
-                                    viewModel.delete(id: item.id)
-                                }
-                                .tint(.red)
+        NavigationStack {
+            List {
+                ForEach(filteredItems) { item in
+                    ToDoListItemView(item: item)
+                        .swipeActions {
+                            Button("Delete") {
+                                viewModel.delete(id: item.id)
                             }
-                    }
-                    .listStyle(PlainListStyle())
+                            .tint(.red)
+                        }
                 }
-                .navigationTitle("To Do List")
-    
-                .toolbar {
-                    Button {
-                        viewModel.showingNewItemView = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.purple)
-                    }
-                }
-                .sheet(isPresented: $viewModel.showingNewItemView, content: {
-                    NewItemView(newItemPresented: $viewModel.showingNewItemView)
-                })
-                
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
+            .listStyle(PlainListStyle())
+            .navigationTitle("To Do List")
+            .searchable(text: $searchText) // Using the searchable modifier
+            .toolbar {
+                Button {
+                    viewModel.showingNewItemView = true
+                } label: {
+                    Image(systemName: "plus")
+                        .foregroundColor(.purple)
+                }
+            }
+            .sheet(isPresented: $viewModel.showingNewItemView, content: {
+                NewItemView(newItemPresented: $viewModel.showingNewItemView)
+            })
+        }
+    }
+
+    private var filteredItems: [ToDoListItem] {
+        if searchText.isEmpty {
+            return items.sorted(by: { $0.dueDate > $1.dueDate })
+        } else {
+            return items.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+                        .sorted(by: { $0.dueDate > $1.dueDate })
         }
     }
 }

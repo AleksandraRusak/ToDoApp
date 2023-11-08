@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F297FF9B2AFBFD0F00704D59 /* CheckedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297FF9A2AFBFD0F00704D59 /* CheckedListView.swift */; };
 		F2A012102AF98CC500BCC7D9 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0120F2AF98CC500BCC7D9 /* ImagePickerView.swift */; };
 		F2A012482AFA433100BCC7D9 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A012472AFA433000BCC7D9 /* APIImage.swift */; };
 		F2A0124E2AFA8FF300BCC7D9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2A0124D2AFA8FF300BCC7D9 /* FirebaseStorage */; };
@@ -60,7 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F297FF9A2AFBFD0F00704D59 /* CheckedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedListView.swift; sourceTree = "<group>"; };
 		F2A011D82AF59CF700BCC7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2A0120F2AF98CC500BCC7D9 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F2A012472AFA433000BCC7D9 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				F2B196F02AE8662400948A38 /* ToDoListItemView.swift */,
 				F2A235032AE9B31F000D60F1 /* ToListButton.swift */,
 				F2A0120F2AF98CC500BCC7D9 /* ImagePickerView.swift */,
-				F297FF9A2AFBFD0F00704D59 /* CheckedListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,7 +372,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F297FF9B2AFBFD0F00704D59 /* CheckedListView.swift in Sources */,
 				F2B196ED2AE8656400948A38 /* LoginView.swift in Sources */,
 				F2B196F72AE8673200948A38 /* ContentViewViewModel.swift in Sources */,
 				F2B197012AE867A800948A38 /* RegisterViewViewModel.swift in Sources */,

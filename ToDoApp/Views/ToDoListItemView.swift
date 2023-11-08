@@ -21,7 +21,7 @@ struct ToDoListItemView: View {
                         .font(.body)
                     Text("\(Date(timeIntervalSince1970: item.dueDate).formatted(date: .abbreviated, time: .shortened))")
                         .font(.footnote)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(dueDateColor)
                 }
                 Spacer()
                 
@@ -35,6 +35,17 @@ struct ToDoListItemView: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
+    
+    private var dueDateColor: Color {
+           let currentDate = Date()
+           let dueDate = Date(timeIntervalSince1970: item.dueDate)
+
+           if currentDate > dueDate && !item.isDone {
+               return .red // Past due date and not done
+           } else {
+               return .secondary // Default color
+           }
+       }
 }
 
 struct ToDoListItemView_Previews: PreviewProvider {
@@ -47,4 +58,3 @@ struct ToDoListItemView_Previews: PreviewProvider {
             isDone: false))
     }
 }
-

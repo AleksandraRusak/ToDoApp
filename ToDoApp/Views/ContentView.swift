@@ -39,10 +39,6 @@ struct ContentView: View {
                             .tabItem{
                                 Label("Home", systemImage: "house")
                             }
-                        CheckedListView()
-                            .tabItem{
-                                Label("Checked", systemImage: "checklist.checked")
-                            }
                         ProfileView()
                             .tabItem{
                                 Label("Profile", systemImage: "person.circle")
