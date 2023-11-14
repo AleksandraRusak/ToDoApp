@@ -33,7 +33,7 @@ struct LoginView: View {
                         }
                         .padding(.top, -133)
                     }
-                    .frame(width: geometry.size.width, height: 300)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 2.5)
                     
                     
                     // Form
@@ -56,7 +56,7 @@ struct LoginView: View {
                         ToListButton(title: "Log in"){
                             viewModel.login()
                         }
-                        .padding()
+                        .padding(4)
                     }
                     
                     

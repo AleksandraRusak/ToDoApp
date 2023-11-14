@@ -32,7 +32,7 @@ struct RegisterView: View {
                     }
                     .padding(.top, -140)
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height / 2.8)
+                .frame(width: geometry.size.width, height: geometry.size.height / 2.5)
                 
                 // Form
                 Form {
@@ -57,7 +57,7 @@ struct RegisterView: View {
                     ToListButton(title: "Create account"){
                         viewModel.register()
                     }
-                        .padding()
+                        .padding(4)
                     }
                 }
             .frame(width: geometry.size.width, height: geometry.size.height)

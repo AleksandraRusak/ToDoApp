@@ -10,13 +10,34 @@ import XCTest
 
 final class ToDoAppTests: XCTestCase {
 
+    var sut: APIImage!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = APIImage()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
+    
+    func testGetImageWithCompletion() throws {
+            let expectation = self.expectation(description: "Completion handler invoked")
+            var image: UIImage?
+            var responseError: Error?
+
+            sut.getImageWithCompletion { img, error in
+                image = img
+                responseError = error
+                expectation.fulfill()
+            }
+
+            waitForExpectations(timeout: 5, handler: nil)
+
+            XCTAssertNotNil(image, "No image was downloaded.")
+            XCTAssertNil(responseError, "An unexpected error occurred: \(responseError?.localizedDescription ?? "")")
+        }
 
     func testExample() throws {
         // This is an example of a functional test case.

@@ -38,7 +38,7 @@ struct NewItemView: View {
                             viewModel.showAlert = true
                         }
                     }
-                    .padding()
+                    .padding(4)
                     
                 }
                 .onAppear {

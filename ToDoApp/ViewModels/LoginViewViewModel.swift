@@ -32,7 +32,12 @@ class LoginViewViewModel: ObservableObject {
         }
         // email @ and .com/.se
         guard email.contains("@") && email.contains(".") else {
-            errorMessage = "Please fill in all fields"
+            errorMessage = "Please fill in email with @ and ."
+            return false
+        }
+        
+        guard password.count >= 6 else {
+            errorMessage = "Please check your password"
             return false
         }
         return true
