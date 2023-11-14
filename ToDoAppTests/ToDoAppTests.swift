@@ -22,6 +22,7 @@ final class ToDoAppTests: XCTestCase {
         sut = nil
     }
     
+    // Create an expectation that must be fulfilled when the completion handler is called, which you expect to happen when the image is fetched.
     func testGetImageWithCompletion() throws {
             let expectation = self.expectation(description: "Completion handler invoked")
             var image: UIImage?
@@ -33,8 +34,10 @@ final class ToDoAppTests: XCTestCase {
                 expectation.fulfill()
             }
 
+        // allows the test to wait for the asynchronous task to complete.
             waitForExpectations(timeout: 5, handler: nil)
 
+        // assertions check if an image is returned and if no error occurred
             XCTAssertNotNil(image, "No image was downloaded.")
             XCTAssertNil(responseError, "An unexpected error occurred: \(responseError?.localizedDescription ?? "")")
         }
