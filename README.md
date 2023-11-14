@@ -13,3 +13,6 @@ Users can specify both the date and time for tasks, which means the app could po
 
 
 <img width="1099" alt="Screenshot 2023-11-13 at 21 28 26" src="https://github.com/AleksandraRusak/ToDoApp/assets/112869405/34248d47-308c-451a-847b-e80a02cd6ffd">
+<img width="1089" alt="Screenshot 2023-11-14 at 10 23 17" src="https://github.com/AleksandraRusak/ToDoApp/assets/112869405/50dc1c98-752c-402e-9138-b2fd171c9f36">
+
+<img width="736" alt="Screenshot 2023-11-14 at 10 06 14" src="https://github.com/AleksandraRusak/ToDoApp/assets/112869405/1add5549-e8e0-45ea-aab8-fa81727ad7e5">
