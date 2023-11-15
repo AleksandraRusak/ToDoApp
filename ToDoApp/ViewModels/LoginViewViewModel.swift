@@ -19,7 +19,7 @@ class LoginViewViewModel: ObservableObject {
         guard validate() else {
             return
         }
-        // Try log in
+        // Try to log in
         Auth.auth().signIn(withEmail: email, password: password)
     }
     

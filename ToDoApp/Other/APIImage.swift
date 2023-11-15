@@ -4,6 +4,8 @@
 //
 //  Created by Aleksandra Rusak on 2023-11-07.
 //
+// fetches image from an URL using a URLSession data task and provides the image through a completion handler.
+
 
 import SwiftUI
 

@@ -12,6 +12,7 @@ class ContentViewViewModel: ObservableObject {
     
     @Published var currentUserId: String = ""
     
+    // This listener will be called whenever the auth state changes (a user signs in or out)
     private var handler: AuthStateDidChangeListenerHandle?
     
     init() {

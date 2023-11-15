@@ -3,7 +3,7 @@
 //  ToDoApp
 //
 //  Created by Aleksandra Rusak on 2023-10-24.
-//
+// properties id, name, email, and joined, can be converted to and from a JSON format due to Codable protocol.
 
 import Foundation
 

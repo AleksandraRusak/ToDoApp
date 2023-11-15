@@ -23,7 +23,7 @@ class ProfileViewViewModel: ObservableObject {
     
     var loader = APIImage()
     
-    func fetchUser() {
+    func fetchUser() { //  Fetches the current user's data from Firestore based on their userID
         guard let userId = Auth.auth().currentUser?.uid else {return}
         
         let db = Firestore.firestore()
@@ -63,6 +63,7 @@ class ProfileViewViewModel: ObservableObject {
         }
     }
     
+    // upload an image to Firebase Storage
     func saveImageToFirebaseStorage(_ image: UIImage?) {
         guard let userId = Auth.auth().currentUser?.uid,
               let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
@@ -73,18 +74,19 @@ class ProfileViewViewModel: ObservableObject {
                 print("Error saving image to Firebase Storage: \(error?.localizedDescription ?? "")")
                 return
             }
-            
+            // download URL of the image that was uploaded to Firebase Storage
             storageRef.downloadURL { url, error in
                 guard let downloadURL = url else {
                     print("Error getting download URL: \(error?.localizedDescription ?? "")")
                     return
                 }
-                
+                // update the user's profile image URL
                 self.updateUserProfileImageURL(downloadURL, for: userId)
             }
         }
     }
     
+    // Updates the user's Firestore document with the new image URL and updates the imageURL property.
     func updateUserProfileImageURL(_ url: URL, for userId: String) {
         let db = Firestore.firestore()
         db.collection("users").document(userId).updateData(["profileImageUrl": url.absoluteString]) { error in

@@ -34,7 +34,7 @@ final class ToDoAppTests: XCTestCase {
                 expectation.fulfill()
             }
 
-        // allows the test to wait for the asynchronous task to complete.
+        
             waitForExpectations(timeout: 5, handler: nil)
 
         // assertions check if an image is returned and if no error occurred

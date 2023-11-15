@@ -51,7 +51,7 @@ class NewItemViewViewModel: ObservableObject {
         guard !title.trimmingCharacters(in: .whitespaces).isEmpty else {
             return false
         }
-        
+        // 86400 = seconds in 24 hours 
         guard dueDate >= Date().addingTimeInterval(-86400) else {
             return false
         }

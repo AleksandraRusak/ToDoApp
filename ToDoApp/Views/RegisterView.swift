@@ -10,8 +10,9 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewViewModel()
     
+    
     var body: some View {
-        GeometryReader { geometry in // Add a GeometryReader
+        GeometryReader { geometry in 
             VStack {
                 // Header
                 ZStack {
