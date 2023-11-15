@@ -213,6 +213,7 @@
 		F2B196E22AE8629200948A38 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F2A012472AFA433000BCC7D9 /* APIImage.swift */,
 				F2B196F22AE8669E00948A38 /* User.swift */,
 				F2B196F42AE866C000948A38 /* ToDoListItem.swift */,
 			);
@@ -224,7 +225,6 @@
 			children = (
 				F2B196B12AE809EE00948A38 /* Assets.xcassets */,
 				F2B196DE2AE80E0000948A38 /* GoogleService-Info.plist */,
-				F2A012472AFA433000BCC7D9 /* APIImage.swift */,
 				F2B1973E2AE931D500948A38 /* ToDoAppApp.swift */,
 				F2A234FF2AE9A70C000D60F1 /* Extentions.swift */,
 			);
