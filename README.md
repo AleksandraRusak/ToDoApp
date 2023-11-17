@@ -1,9 +1,10 @@
 # ToDoApp
 To Do application
 
+There is an app icon and a splash screen.
 The app offers functionality for user registration and profile management. Users can log in, create an account, and view their profile information (connected to Firebase).
 
-Users can add, view, and edit tasks. Each task have a title and a due date, and a calendar for selecting task dates. There's an indication that you can mark tasks as done. This suggests the app allows for scheduling and tracking tasks over time.
+Users can add, view, and edit tasks. Each task have a title, time and a calendar for selecting task dates. There's an indication that you can mark tasks as done. This suggests the app allows for scheduling and tracking tasks over time.
 
 There's a feature that allows users to access their photo library, camera or user can choose a random profile photo (connected to API) which could be for adding an image to their profile (connected to Firebase Storage).
 
